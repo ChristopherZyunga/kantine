@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skolekantine</title>
+    <link rel="stylesheet" type="text/css" href="kantine.css">
+</head>
+<body>
+    <header>
+        <h1>Skolekantine</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ukens Meny</h2>
+            <div class="MENY">
+                <article class="DAG">
+                    <h3>Mandag</h3>
+                    <ul>
+                        <li>Pasta - 60 NOK</li>
+                    </ul>
+                </article>
+                <article class="DAG">
+                    <h3>Tirsdag</h3>
+                    <ul>
+                        <li>Lasagne - 60 NOK</li>
+                    </ul>
+                </article>
+                <article class="day">
+                    <h3>Onsdag</h3>
+                    <ul>
+                        <li>Kebab wrap - 60 NOK</li>
+                    </ul>
+                </article>
+                <article class="day">
+                    <h3>Onsdag</h3>
+                    <ul>
+                        <li>Lamsuppe - 60 NOK</li>
+                    </ul>
+                </article>
+                <article class="day">
+                    <h3>Torsdag</h3>
+                    <ul>
+                        <li>Fisk med ris - 60 NOK</li>
+                    </ul>
+                </article>
+                <article class="day">
+                    <h3>Fredag</h3>
+                    <ul>
+                        <li>Pizza - 40 NOK</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Øvrige Varer</h2>
+            <ul class="items">
+                <li>Kylling nuggets - 30 NOK</li>
+                <li>Ost og skinke baguette - 52 NOK</li>
+                <li>Kylling curry baguette - 54 NOK</li>
+                <li>Cup noodles - 25 NOK</li>
+                <li>Hvetebolle - 10 NOK</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Legg til ny rett</h2>
+            <form action="{{ url_for('add_dish') }}" method="post">
+                <label for="day">Dag:</label>
+                <input type="text" id="day" name="day" placeholder="Dag" required>
+                
+                <label for="dish">Rett:</label>
+                <input type="text" id="dish" name="dish" placeholder="Rett" required>
+                
+                <label for="price">Pris:</label>
+                <input type="text" id="price" name="price" placeholder="Pris" required>
+                
+                <button type="submit">Legg til rett</button>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>
